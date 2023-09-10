@@ -26,19 +26,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
 </head>
-<style>
-    body {
-        background: #fff5ee;
-    }
-</style>
-<body>
+<body style="background: #FFF5EE">
 
 
 <div class="content-full" style="padding: 50px ; text-align: center; ">
     <%--    admin--%>
     <div class="content container">
 
-        <table id="mytable" class="table table-success table-striped" style="width: 100%">
+        <table id="mytable" class="table-borderless table-striped table-earning" style="width: 100%">
             <%--        nút quay lại--%>
             <a style="    border: 1px solid;
     background: black;

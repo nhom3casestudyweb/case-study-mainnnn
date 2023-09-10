@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #fff5ee;
+}
+.header-pay{
+    text-align: center;
+    margin: 60px 12px;
+}
+.header-pay i{
+    font-size: 60px;
+}
+.btn btn-secondary{
+
+}
+.btn btn-secondary:hover{
+    transform: scale(0.9);
+}
+.header-info{
+    width: 100%;
+}
+.header-cart{
+    margin: 0 45px;
+}
+.info-cart{
+    border: 1px solid;
+    border-radius: 8px;
+    width: 400px;
+    padding: 11px;
+}

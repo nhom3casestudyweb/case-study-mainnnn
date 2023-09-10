@@ -13,17 +13,11 @@ public class ProductRepository implements IProductRepository {
     private static final String SELECT_PRODUCT_ACCESSORIES = "call show_accessories();";
     private static final String SELECT_ALL_PRODUCT = "call show_all_product();";
 
-    private static final String SELECT_PRODUCT_DETAIL = "call show_product_detail(?);";
     private static final String INSERT_PRODUCT = "call case_study_web_group3.show_product()";
     private static final String DELETE_PRODUCT = "call case_study_web_group3.delete_product(?)";
     private static final String EDIT_PRODUCT = "call case_study_web_group3.edit_product(?)";
     private static final String EDIT_PRODUCTS = "call case_study_web_group3.edit_products(?,?,?,?,?)";
-    private static final String CREATE_PRODUCT = "call case_study_web_group3.create_product(?,?,?,?,?)";
-//    private static final String CREATE_PRODUCT = "insert into product(product_name,old_price, product_price, product_description,\n" +
-//        "product_type_id, product_inventory) value\n" +
-//        "(?,?,?,?,?,?);";
-    //    private static final String CREATE_PRODUCT = "call case_study_web_group3.create_product(?,?,?,?,?)";
-//    private static final String FIND_PRODUCT_BY_NAME =
+    private static final String CREATE_PRODUCT = "call case_study_web_group3.create_product(?,?,?,?,?,?)";
 
     @Override
     public List<Product> showListChair() {
@@ -220,22 +214,15 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void createProduct(String productName, int productPrice, String productDescription, int productType, int productInventory) {
+    public void createProduct(String productName, double productPrice, String description, int productType, int productInventory, String fileInput) {
         try {
-//            PreparedStatement preparedStatement = BaseRepository.getConnection().prepareStatement(CREATE_PRODUCT);
-//            preparedStatement.setString(1, productName);
-//            preparedStatement.setInt(2, old_price);
-//            preparedStatement.setInt(3, productPrice);
-//            preparedStatement.setString(4, productDescription);
-//            preparedStatement.setInt(5, productType);
-//            preparedStatement.setInt(6, productInventory);
-//            preparedStatement.executeUpdate();
             CallableStatement callableStatement = BaseProductRepository.getConnection().prepareCall(CREATE_PRODUCT);
             callableStatement.setString(1,productName);
-            callableStatement.setInt(2,productPrice);
-            callableStatement.setString(3,productDescription);
+            callableStatement.setDouble(2,productPrice);
+            callableStatement.setString(3,description);
             callableStatement.setInt(4,productType);
             callableStatement.setInt(5,productInventory);
+            callableStatement.setString(6,fileInput);
             callableStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

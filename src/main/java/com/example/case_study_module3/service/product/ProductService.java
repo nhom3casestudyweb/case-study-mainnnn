@@ -52,7 +52,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void createProduct(String productName, int productPrice, String productDescription, int productType, int productInventory) {
-        productRepository.createProduct(productName,productPrice,productDescription,productType,productInventory);
+    public void createProduct(String productName, double productPrice, String description, int productType, int productInventory, String fileInput) {
+        productRepository.createProduct(productName,productPrice,description,productType,productInventory,fileInput);
     }
 }

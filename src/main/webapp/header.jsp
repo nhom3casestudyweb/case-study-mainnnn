@@ -9,6 +9,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <head>
+    <link rel="stylesheet" href="css/home_page2.css">
+    <link rel="stylesheet" href="css/cart.css">
     <style>
         a{
             text-decoration: none;
@@ -54,13 +56,47 @@
 <%--            </div>--%>
 <%--        </div>--%>
         <div class="dropdown">
-            <button class="btn btn-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button style="    background: darkgrey;
+    border: 1px solid black;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    margin: auto 30px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;" class="btn btn-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                  Admin
             </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/customer">Quản lí người dùng</a></li>
-                <li><a class="dropdown-item" href="/product-servlet">Quản lí Sản phẩm</a></li>
-                <li><a class="dropdown-item" href="/order?action=showCart">Quản lí đơn hàng</a></li>
+            <ul style="background: transparent; border: none" class="dropdown-menu">
+                <li style="    background: darkgrey;
+    border: 1px solid black;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    margin: auto 65px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 200px;"><a style="background: transparent" class="dropdown-item" href="/customer">Quản lí người dùng</a></li>
+
+                <li style="    background: darkgrey;
+    border: 1px solid black;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    margin: auto 65px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 200px;"><a style="background: transparent" class="dropdown-item" href="/product-servlet">Quản lí Sản phẩm</a></li>
+
+                <li style="    background: darkgrey;
+    border: 1px solid black;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    margin: auto 65px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 200px;"><a style="background: transparent" class="dropdown-item" href="/order?action=showCart">Quản lí đơn hàng</a></li>
             </ul>
         </div>
     </c:if>
@@ -210,8 +246,8 @@
 <%--                    </ul>--%>
 <%--                </div>--%>
                 <div class="list-group">
-                    <button class="btn btn-secondary"><a style="text-decoration: none" href="/product-servlet?action=showListChair" class="text-dark">Ghế</a></button>
-                    <button class="btn btn-secondary"><a style="text-decoration: none" href="/product-servlet?action=showListDesk " class="text-dark">Bàn</a></button>
+                    <button style="margin-bottom: 10px;" class="btn btn-secondary"><a style="text-decoration: none" href="/product-servlet?action=showListChair" class="text-dark">Ghế</a></button>
+                    <button style="margin-bottom: 10px;" class="btn btn-secondary"><a style="text-decoration: none" href="/product-servlet?action=showListDesk " class="text-dark">Bàn</a></button>
                     <button class="btn btn-secondary"><a style="text-decoration: none" href="/product-servlet?action=showListAccessories" class="text-dark">Phụ kiện công thái học</a></button>
                 </div>
             </div>

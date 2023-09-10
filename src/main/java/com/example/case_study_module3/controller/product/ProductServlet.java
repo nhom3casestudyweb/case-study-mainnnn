@@ -68,6 +68,8 @@ public class ProductServlet extends HttpServlet {
     private void editProduct(HttpServletRequest request, HttpServletResponse response) {
         int idProduct = Integer.parseInt(request.getParameter("code"));
         Product product = productService.editProduct(idProduct);
+        long productPrice = (long) product.getProductPrice();
+        request.setAttribute("productPrice",productPrice);
         request.setAttribute("product",product);
         try {
             request.getRequestDispatcher("form_edit_product.jsp").forward(request,response);
@@ -228,12 +230,12 @@ public class ProductServlet extends HttpServlet {
     }
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
         String product_name = request.getParameter("product_name");
-        int old_price = Integer.parseInt(request.getParameter("old_price"));
-        int product_price = Integer.parseInt(request.getParameter("product_price"));
-        String product_description = request.getParameter("product_description");
+        double product_price = Double.parseDouble(request.getParameter("product_price"));
+        String description = request.getParameter("product_description");
         int product_type = Integer.parseInt(request.getParameter("product_type"));
         int product_inventory = Integer.parseInt(request.getParameter("product_inventory"));
-        productService.createProduct(product_name,product_price,product_description,product_type,product_inventory);
+        String fileInput = request.getParameter("fileInput");
+        productService.createProduct(product_name,product_price,description,product_type,product_inventory,fileInput);
         try {
             response.sendRedirect("/product-servlet");
         } catch (IOException e) {

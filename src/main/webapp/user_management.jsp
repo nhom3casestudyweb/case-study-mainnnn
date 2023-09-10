@@ -75,7 +75,6 @@
 <%--        </ul>--%>
 <%--    </div>--%>
     <jsp:include page="header.jsp"/>
->>>>>>> 4da6ce818e126ef88fc7e20eeabb7099c2600b7b
 </div>
 <%--    hết--%>
 
@@ -83,57 +82,58 @@
 <br>
 
 <!--content-->
-
-<table id="user" class="table table-striped table-hover" style="text-align: center">
-    <thead>
-    <tr style="font-weight: bold">
-        <th>STT</th>
-        <th>Tên người dùng</th>
-        <th>Ngày sinh</th>
-        <th>Giới tính</th>
-        <th>Số điện thoại</th>
-        <th>Email</th>
-        <th>Địa chỉ</th>
-        <th>Tài khoản người dùng</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="customer" items="${customerList}" varStatus="loop">
-        <tr>
-            <td><c:out value="${loop.count}"/></td>
-            <td><c:out value="${customer.getName()}"/></td>
-
-<%--            xử lí ngày tháng năm--%>
-            <c:set var="dateString" value="${customer.getdOB()}"/>
-            <fmt:parseDate value="${dateString}" var="date" pattern="yyyy-MM-dd"/>
-            <td>
-                <fmt:formatDate value="${date}" pattern="dd/MM/yyyy"/>
-            </td>
-
-            <c:if test="${customer.isGender() == true}">
-                <td>Nam</td>
-            </c:if>
-            <c:if test="${customer.isGender() == false}">
-                <td>Nữ</td>
-            </c:if>
-            <td><c:out value="${customer.getPhoneNumber()}"/></td>
-            <td><c:out value="${customer.getEmail()}"/></td>
-            <td><c:out value="${customer.getAddress()}"/></td>
-            <td><c:out value="${customer.getAccUserName()}"/></td>
-            <td>
-                <button style="height: 29px;padding: unset;background: transparent;border: none;margin-top: -1px;" type="submit" class="btn btn-primary text-dark"><a href="customer?action=edit&id=${customer.id}" style="color: black">
-                    <i class="fa-solid fa-user-pen"></i>
-                </a></button>
-                <button style="height: 29px;padding: unset;background: transparent;border: none;margin-top: -1px;" type="submit" class="btn btn-primary text-dark" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" onclick="sendInfoToModal('${customer.id}','${customer.name}')">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </td>
+<div class="container">
+    <table id="user" class="table table-striped table-hover" style="text-align: center">
+        <thead>
+        <tr style="font-weight: bold">
+            <th>STT</th>
+            <th>Tên người dùng</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Tài khoản người dùng</th>
+            <th></th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="customer" items="${customerList}" varStatus="loop">
+            <tr>
+                <td><c:out value="${loop.count}"/></td>
+                <td><c:out value="${customer.getName()}"/></td>
+
+                    <%--            xử lí ngày tháng năm--%>
+                <c:set var="dateString" value="${customer.getdOB()}"/>
+                <fmt:parseDate value="${dateString}" var="date" pattern="yyyy-MM-dd"/>
+                <td>
+                    <fmt:formatDate value="${date}" pattern="dd/MM/yyyy"/>
+                </td>
+
+                <c:if test="${customer.isGender() == true}">
+                    <td>Nam</td>
+                </c:if>
+                <c:if test="${customer.isGender() == false}">
+                    <td>Nữ</td>
+                </c:if>
+                <td><c:out value="${customer.getPhoneNumber()}"/></td>
+                <td><c:out value="${customer.getEmail()}"/></td>
+                <td><c:out value="${customer.getAddress()}"/></td>
+                <td><c:out value="${customer.getAccUserName()}"/></td>
+                <td>
+                    <button style="height: 29px;padding: unset;background: transparent;border: none;margin-top: -1px;" type="submit" class="btn btn-primary text-dark"><a href="customer?action=edit&id=${customer.id}" style="color: black">
+                        <i class="fa-solid fa-user-pen"></i>
+                    </a></button>
+                    <button style="height: 29px;padding: unset;background: transparent;border: none;margin-top: -1px;" type="submit" class="btn btn-primary text-dark" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" onclick="sendInfoToModal('${customer.id}','${customer.name}')">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 
 
 <%--modal--%>

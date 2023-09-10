@@ -1,0 +1,29 @@
+.price-product h4{
+    font-weight: bold;
+    float: left;
+}
+.total-price{
+    width: 50%;
+}
+.price {
+    width: 50%;
+    text-align: right;
+    margin: 0 -24px;
+}
+.buy-product{
+    background: black;
+    font-size: 25px;
+    margin: 19px 14px;
+    float: left;
+    height: 67px;
+    color: white;
+    transition: 0.5s;
+    border-radius: 19px;
+}
+.buy-product:hover{
+    transform: scale(0.9);
+
+}
+.price-product{
+    margin: 19px 14px;
+}

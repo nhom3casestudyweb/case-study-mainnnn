@@ -17,10 +17,10 @@ public class ProductRepository implements IProductRepository {
     private static final String DELETE_PRODUCT = "call case_study_web_group3.delete_product(?)";
     private static final String EDIT_PRODUCT = "call case_study_web_group3.edit_product(?)";
     private static final String EDIT_PRODUCTS = "call case_study_web_group3.edit_products(?,?,?,?,?)";
-//    private static final String CREATE_PRODUCT = "call case_study_web_group3.create_product(?,?,?,?,?)";
-    private static final String CREATE_PRODUCT = "insert into product(product_name,old_price, product_price, product_description,\n" +
-        "product_type_id, product_inventory) value\n" +
-        "(?,?,?,?,?,?);";
+    private static final String CREATE_PRODUCT = "call case_study_web_group3.create_product(?,?,?,?,?)";
+//    private static final String CREATE_PRODUCT = "insert into product(product_name,old_price, product_price, product_description,\n" +
+//        "product_type_id, product_inventory) value\n" +
+//        "(?,?,?,?,?,?);";
 //    private static final String FIND_PRODUCT_BY_NAME =
 
     @Override

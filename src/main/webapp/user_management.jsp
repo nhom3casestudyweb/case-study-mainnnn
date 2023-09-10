@@ -18,7 +18,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="/khung_suon/form.css">
-    <link rel="stylesheet" href="/khung_suon/cart.css">
+    <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
 <div class="header">
@@ -68,7 +68,7 @@
                     <a href="/customer">Quản lí người dùng</a>
                 </li>
                 <li>
-                    <a href="">Quản lí Sản phẩm</a>
+                    <a href="/product-servlet">Quản lí Sản phẩm</a>
                 </li>
             </div>
         </ul>

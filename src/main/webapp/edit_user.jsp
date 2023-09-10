@@ -48,6 +48,16 @@
           </li>
 
             <h2 style="margin: 15px 123px;">Danh sách người dùng</h2>
+          <a style="    border: 1px solid;
+    background: #deb887;
+    height: 59px;
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    border-radius: 13px;
+    width: 124px;" href="/customer">Quay lại
+            <i style="scaleX(-1)" class="fa-solid fa-share fa-fade"></i>
+          </a>
         </div>
 
       </ul>

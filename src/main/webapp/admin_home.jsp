@@ -80,18 +80,18 @@
                                 <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
                                 <option value="Giá Treo CPU Buddy">
                             </datalist>
-                            <button type="button" class="search-box-btn">
+                            <button type="submit" class="search-box-btn">
                                 <i class='bx bx-search-alt'></i>
                             </button>
                         </div>
                     </form>
 
                     <!--                          giỏ hàng-->
-                    <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </button>
+<%--                    <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"--%>
+<%--                            data-bs-toggle="offcanvas"--%>
+<%--                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">--%>
+<%--                        <i class="fa-solid fa-cart-plus"></i>--%>
+<%--                    </button>--%>
                 </div>
             </ul>
         </div>
@@ -103,7 +103,8 @@
     <div class="modal" tabindex="-1" id="exampleModal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="index.jsp">
+                <form action="/account" method="get">
+                    <input type="hidden" name="action" value="logout">
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -135,6 +136,9 @@
                     </li>
                     <li>
                         <a href="/product-servlet">Quản lí Sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="/order?action=showCart">Quản lí đơn hàng</a>
                     </li>
                 </div>
 

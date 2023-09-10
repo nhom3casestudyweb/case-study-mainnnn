@@ -27,7 +27,7 @@
 
 </head>
 <style>
-    body{
+    body {
         background: #fff5ee;
     }
 </style>
@@ -38,7 +38,7 @@
     <%--    admin--%>
     <div class="content container">
 
-        <table id="mytable" class="table table-striped" style="width: 100%; background: #deb887">
+        <table id="mytable" class="table table-success table-striped" style="width: 100%">
             <%--        nút quay lại--%>
             <a style="    border: 1px solid;
     background: black;
@@ -46,7 +46,7 @@
     text-decoration: none;
     color: white;
     padding: 20px;
-    border-radius: 13px" href="/admin_home.jsp">
+    border-radius: 13px" href="/index.jsp">
                 <i class="fa-solid fa-arrow-left fa-fade"></i>
                 Quay lại trang Admin
             </a>
@@ -135,7 +135,10 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                                     style="background: blue ; width: 100px ; height: 39px ;border-radius: 7px">Thoát
                             </button>
-                            <button type="submit" class="btn btn-primary" style="background: red ; width: 100px ; height: 39px ; border-radius: 10px ;border-radius: 7px ;padding: initial">Xóa</button>
+                            <button type="submit" class="btn btn-primary"
+                                    style="background: red ; width: 100px ; height: 39px ; border-radius: 10px ;border-radius: 7px ;padding: initial">
+                                Xóa
+                            </button>
                         </div>
                     </div>
                 </div>

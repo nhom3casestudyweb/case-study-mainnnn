@@ -15,7 +15,7 @@
 </head>
 <style>
   body {
-    background: #fff5ee;
+    background: beige;
   }
 </style>
 <body>

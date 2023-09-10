@@ -1,7 +1,7 @@
 package com.example.case_study_module3.repository.customer;
 
 import com.example.case_study_module3.model.customer.Customer;
-import com.example.case_study_module3.repository.product.BaseProductRepository;
+import com.example.case_study_module3.repository.BaseRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -22,8 +22,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public List<Customer> selectAllUser() throws SQLException {
         List<Customer> customerList = new ArrayList<>();
-        Connection connection = BaseProductRepository.getConnection();
-        try {
+        Connection connection = BaseRepository.getConnection();try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -53,8 +52,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public void insertUser(Customer customer) {
-        Connection connection = BaseProductRepository.getConnection();
-        try {
+        Connection connection = BaseRepository.getConnection();try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS);
             preparedStatement.setString(1, customer.getName());
             preparedStatement.setString(2, customer.getdOB());
@@ -75,7 +73,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public boolean updateUser(Customer customer) throws SQLException {
         boolean rowUpdate;
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         PreparedStatement preparedStatement ;
         try {
             preparedStatement = connection.prepareStatement(UPDATE_USERS);
@@ -98,7 +96,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public Customer selectCustomer(int id) throws SQLException {
         Customer customer = null;
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USERS_BY_ID);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -119,7 +117,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public boolean deleteUser(int id) throws SQLException {
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         boolean rowDelete;
         try {
             CallableStatement callableStatement = connection.prepareCall(DELETE_ACCOUNT);
@@ -141,7 +139,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public Customer selectCustomerByAccUser(String accUserName) throws SQLException {
         Customer customer = null;
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         PreparedStatement preparedStatement;
         try {
             preparedStatement = connection.prepareStatement(SELECT_USERS_BY_ACC_USER_NAME);
@@ -174,7 +172,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public void editUser(int id, String name, String dateOfBirth, boolean gender, String phoneNumber, String email, String address, String accUserName) {
         try {
-            PreparedStatement preparedStatement = BaseProductRepository.getConnection().prepareStatement(UPDATE_USERS);
+            PreparedStatement preparedStatement = BaseRepository.getConnection().prepareStatement(UPDATE_USERS);
             preparedStatement.setString(1,name);
             preparedStatement.setString(2,dateOfBirth);
             preparedStatement.setBoolean(3,gender);

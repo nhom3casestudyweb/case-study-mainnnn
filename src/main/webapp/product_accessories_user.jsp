@@ -83,11 +83,29 @@
 
 
                     <!--                          giỏ hàng-->
+<<<<<<< HEAD
                     <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
                             data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
+=======
+                    <c:if test="${sessionScope.account.roleName != 'admin'}">
+                        <button class="search-box-cart" class="btn btn-primary" type="button"
+                                class="btn position-relative">
+                            <c:set var="size" value="${sessionScope.size}"/>
+                            <a style="color: black" href="/order/order.jsp"><i
+                                    class="fa-solid fa-cart-plus"></i></a>
+                            <c:if test="${sessionScope.size > 0}">
+                            <span style="margin: 81px -10px;font-size: 11px;"
+                                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                          ${size}
+                                <span class="visually-hidden">unread messages</span>
+                             </c:if>
+                            </span>
+                        </button>
+                    </c:if>
+>>>>>>> 4da6ce818e126ef88fc7e20eeabb7099c2600b7b
                 </div>
             </ul>
         </div>

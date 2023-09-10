@@ -137,7 +137,7 @@ public class AccountServlet extends HttpServlet {
             session.invalidate();
         }
         try {
-            response.sendRedirect("/product-servlet");
+            response.sendRedirect("/index.jsp");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -361,7 +361,7 @@ public class AccountServlet extends HttpServlet {
                 if (customer == null && account.getRoleName().equals("admin")) {
                     request.setAttribute("userName", userName);
 //                    request.setAttribute("msg", "Đăng nhập thành công");
-                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/admin_home.jsp");
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
                     try {
                         requestDispatcher.forward(request, response);
                     } catch (ServletException e) {
@@ -372,7 +372,7 @@ public class AccountServlet extends HttpServlet {
                 } else {
                     request.setAttribute("userName", userName);
 //                    request.setAttribute("msg", "Đăng nhập thành công");
-                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/user_home.jsp");
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
                     try {
                         requestDispatcher.forward(request, response);
                     } catch (ServletException e) {
@@ -394,7 +394,7 @@ public class AccountServlet extends HttpServlet {
             }
         } else {
             request.setAttribute("errMap", errMap);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/user_home.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
             try {
                 requestDispatcher.forward(request, response);
             } catch (ServletException e) {

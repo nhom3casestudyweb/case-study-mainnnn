@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,273 +18,256 @@
 </head>
 <body>
 <div class="header">
-    <!--    header-menu-->
-    <!--    người viết: hậu-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <!--        logo wed-->
-        <div class="logo">
-            <img src="home_img/logo.png">
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
-                <div class="nav-links">
-                    <li><a href="index.jsp">Trang chủ</a></li>
+    <jsp:include page="header.jsp"/>
+    <%--    <!--    header-menu-->--%>
+    <%--    <!--    người viết: hậu-->--%>
+    <%--    <nav class="navbar navbar-expand-lg bg-body-tertiary">--%>
+    <%--        <!--        logo wed-->--%>
+    <%--        <div class="logo">--%>
+    <%--            <img src="home_img/logo.png">--%>
+    <%--        </div>--%>
+    <%--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--%>
+    <%--                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--%>
+    <%--                aria-expanded="false" aria-label="Toggle navigation">--%>
+    <%--            <span class="navbar-toggler-icon"></span>--%>
+    <%--        </button>--%>
+    <%--        <div class="collapse navbar-collapse" id="navbarSupportedContent">--%>
+    <%--            <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">--%>
+    <%--                <div class="nav-links">--%>
+    <%--                    <li><a href="index.jsp">Trang chủ</a></li>--%>
 
-                    <li>
-                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                           aria-controls="offcanvasExample">
-                            Sản phẩm
-                        </a>
-                    </li>
+    <%--                    <li>--%>
+    <%--                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"--%>
+    <%--                           aria-controls="offcanvasExample">--%>
+    <%--                            Sản phẩm--%>
+    <%--                        </a>--%>
+    <%--                    </li>--%>
 
-                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>
-                </div>
+    <%--                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>--%>
+    <%--                </div>--%>
 
-                <div class="nav-btns">
-                    <!--                   đăng nhập-->
-                    <button class="btn-primary" type="submit"><a
-                            href="/login.jsp">Đăng
-                        nhập</a></button>
+    <%--                <div class="nav-btns">--%>
+    <%--                    <!--                   đăng nhập-->--%>
+    <%--                    <button class="btn-primary" type="submit"><a--%>
+    <%--                            href="/login.jsp">Đăng--%>
+    <%--                        nhập</a></button>--%>
 
-                    <!--                     tìm kiếm-->
-                    <form action="/product-servlet?action=search" method="post">
-                        <div class="search-box">
-                            <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"
-                                   placeholder="Tìm tên sản phẩm...">
-                            <datalist id="topics">
-                                <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
-                                <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng">
-                                <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen">
-                                <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic">
-                                <option value="Bàn SMARTDESK GAMING">
-                                <option value="Bàn SMARTDESK GAMING BLACK PC">
-                                <option value="Bàn SMARTDESK STUDIO PRO">
-                                <option value="Bàn SMARTDESK STUDIO PIANO">
-                                <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
-                                <option value="Giá Treo CPU Buddy">
-                            </datalist>
-                            <button type="button" class="search-box-btn">
-                                <i class='bx bx-search-alt'></i>
-                            </button>
-                        </div>
-                    </form>
+    <%--                    <!--                     tìm kiếm-->--%>
+    <%--                    <form action="/product-servlet?action=search" method="post">--%>
+    <%--                        <div class="search-box">--%>
+    <%--                            <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"--%>
+    <%--                                   placeholder="Tìm tên sản phẩm...">--%>
+    <%--                            <datalist id="topics">--%>
+    <%--                                <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">--%>
+    <%--                                <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng">--%>
+    <%--                                <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen">--%>
+    <%--                                <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic">--%>
+    <%--                                <option value="Bàn SMARTDESK GAMING">--%>
+    <%--                                <option value="Bàn SMARTDESK GAMING BLACK PC">--%>
+    <%--                                <option value="Bàn SMARTDESK STUDIO PRO">--%>
+    <%--                                <option value="Bàn SMARTDESK STUDIO PIANO">--%>
+    <%--                                <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">--%>
+    <%--                                <option value="Giá Treo CPU Buddy">--%>
+    <%--                            </datalist>--%>
+    <%--                            <button type="button" class="search-box-btn">--%>
+    <%--                                <i class='bx bx-search-alt'></i>--%>
+    <%--                            </button>--%>
+    <%--                        </div>--%>
+    <%--                    </form>--%>
 
 
-                    <!--                          giỏ hàng-->
-                    <button class="search-box-cart" class="btn btn-primary" type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
-                            class="btn position-relative">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span style="margin: 81px -10px;font-size: 11px;" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    0
-                    <span class="visually-hidden">unread messages</span>
-                        </span>
+    <%--                    <!--                          giỏ hàng-->--%>
+    <%--                    <c:if test="${sessionScope.account.roleName != 'admin'}">--%>
+    <%--                        <button class="search-box-cart" class="btn btn-primary" type="button"--%>
+    <%--                                class="btn position-relative">--%>
+    <%--                            <c:set var="size" value="${sessionScope.size}"/>--%>
+    <%--                            <a style="color: black" href="/order/order.jsp"><i--%>
+    <%--                                    class="fa-solid fa-cart-plus"></i></a>--%>
+    <%--                            <c:if test="${sessionScope.size > 0}">--%>
+    <%--                            <span style="margin: 81px -10px;font-size: 11px;"--%>
+    <%--                                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">--%>
+    <%--                                          ${size}--%>
+    <%--                                <span class="visually-hidden">unread messages</span>--%>
+    <%--                             </c:if>--%>
+    <%--                            </span>--%>
+    <%--                        </button>--%>
+    <%--                    </c:if>--%>
+    <%--                </div>--%>
+    <%--            </ul>--%>
+    <%--        </div>--%>
+    <%--    </nav>--%>
+    <%--    <!--    hết-->--%>
+
+
+    <%--    <!--    danh sách option sản phẩm-->--%>
+    <%--    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">--%>
+    <%--        <div class="list-product">--%>
+    <%--            <div class="offcanvas-header">--%>
+    <%--                <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="font-weight: bold;font-size: 33px;margin: 20px -4px;">--%>
+    <%--                    Ergonomic3 Store--%>
+    <%--                    <i class="fa-brands fa-sass fa-bounce fa-sm" style="color: #7c889c;font-size: 39px;"></i>--%>
+    <%--                </h5>--%>
+    <%--                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>--%>
+    <%--            </div>--%>
+    <%--            <div class="offcanvas-body" >--%>
+    <%--                <div style="font-size: 21px">--%>
+    <%--                    Chúng tôi đặt quyền lợi khách hàng lên hàng đầu,--%>
+    <%--                    cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop--%>
+    <%--                    <i class="fa-brands fa-think-peaks fa-beat-fade fa-sm"></i>--%>
+    <%--                </div>--%>
+    <%--                <div class="dropdown mt-3">--%>
+    <%--                    <button style="background: grey" id="selection-product" class="btn btn-secondary dropdown-toggle" type="button"--%>
+    <%--                            data-bs-toggle="dropdown">--%>
+    <%--                        Xem sản phẩm của shop tại đây--%>
+    <%--                    </button>--%>
+    <%--                    <ul class="dropdown-menu">--%>
+    <%--                        <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế--%>
+    <%--                            công thái học</a></li>--%>
+    <%--                        <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn--%>
+    <%--                            công thái học</a></li>--%>
+    <%--                        <li><a style="font-weight: bold" class="dropdown-item"--%>
+    <%--                               href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>--%>
+    <%--                        <li>--%>
+    <%--                            <hr class="dropdown-divider">--%>
+    <%--                        </li>--%>
+    <%--                        <li><a style="font-weight: bold" class="dropdown-item" href="#">--%>
+    <%--                            Sản phẩm HOT--%>
+    <%--                            <i class="fa-solid fa-fire"></i>--%>
+    <%--                        </a></li>--%>
+    <%--                    </ul>--%>
+    <%--                </div>--%>
+    <%--            </div>--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
+    <!--    hết-->
+</div>
+
+<!--    hết-->
+
+<!--//header2-->
+<div class="header-content">
+    <div class="row">
+        <div class="col-xl-5 col-md-12">
+            <div class="intro-text col-md-12">
+                <h1>Thưởng thức sự tiện nghi</h1>
+                <p>Sự kết hợp mới mẻ</p>
+                <div class="btns">
+                    <button class="btn-primary" style="width: 150px; font-size: 23px" onclick="introFunction()"
+                            id="start" title="Go to top">Bắt đầu
                     </button>
-
-
                 </div>
+            </div>
+        </div>
+
+        <!--             ảnh phần header-->
+        <div class="col-xl-7 col-md-12">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="hero-img">
+                            <img src="home_img/header10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-img">
+                            <img src="home_img/header6.png" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-img">
+                            <img src="home_img/header7.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-img">
+                            <img src="home_img/header8.png" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-img">
+                            <img src="home_img/header9.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-img">
+                            <img src="home_img/header5.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-img">
+                            <img src="home_img/header11.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-img">
+                            <img src="home_img/header12.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--    hết-->
+
+<!--    mô tả 1-->
+<div class="row class-content">
+    <div class="col-md-12 col-xl-6">
+        <!--        nội dung mô tả công thái học-->
+        <div class="content-text">
+            <h2>Ergonomic3 Store</h2>
+            <p>Nội thất công thái học là một phong cách thiết kế nội thất phổ biến
+                trong công nghiệp hiện đại. Phong cách này thường tập trung vào sự tiện nghi,
+                tính chất thực tế và sự hài hòa giữa chức năng và thẩm mỹ.</p>
+            <p>Trong nội thất công thái học, không gian được sắp xếp một cách hợp lý và tối ưu hóa .
+                Các đồ vật và nội thất được sắp xếp sao cho phù hợp với chức năng sử dụng và
+                tận dụng tối đa không gian có sẵn. Nguyên tắc sắp xếp và tổ chức được chú trọng để
+                tạo ra sự thông thoáng và thoải mái cho người sử dụng.</p>
+            <p>Phong cách này tạo ra không gian thoáng đãng, gọn gàng và tạo cảm giác thoải
+                mái cho người sử dụng.</p>
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-6">
+        <!--        hình ảnh mô tả-->
+        <div class="content-img">
+            <img src="https://banghevanphong.net.vn/wp-content/uploads/2020/12/khong-gian-hoc-tap-lam-viec-tai-nha-5.jpg"
+                 alt="">
+        </div>
+    </div>
+</div>
+
+<!--mô tả 2-->
+<div class="row class-content">
+    <div class="col-md-12 col-xl-6">
+        <!--        nội dung mô tả công thái học-->
+        <div class="content-text">
+            <h2 id="h2">Tại sao nên chọn <b>Ergonomic3 Store</b> ?</h2>
+            <ul class="class-ul">
+                <li>Đảm bảo chất lượng sản phẩm luôn là số 1</li>
+                <li>Hoàn tiền lập tức nếu không hài lòng về sản phẩm</li>
+                <li>Giảm 30% ngay từ lần mua đầu tiên</li>
+                <li>Sản phẩm nhập khẩu hoàn toàn chính hãng</li>
+                <li>Luôn cung cấp các giá trị có lợi ích cho khách hàng</li>
             </ul>
         </div>
-    </nav>
-    <!--    hết-->
-
-
-    <!--    danh sách option sản phẩm-->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="list-product">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="font-weight: bold;font-size: 33px;margin: 20px -4px;">
-                    Ergonomic3 Store
-                    <i class="fa-brands fa-sass fa-bounce fa-sm" style="color: #7c889c;font-size: 39px;"></i>
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body" >
-                <div style="font-size: 21px">
-                    Chúng tôi đặt quyền lợi khách hàng lên hàng đầu,
-                    cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop
-                    <i class="fa-brands fa-think-peaks fa-beat-fade fa-sm"></i>
-                </div>
-                <div class="dropdown mt-3">
-                    <button style="background: grey" id="selection-product" class="btn btn-secondary dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown">
-                        Xem sản phẩm của shop tại đây
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế
-                            công thái học</a></li>
-                        <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn
-                            công thái học</a></li>
-                        <li><a style="font-weight: bold" class="dropdown-item"
-                               href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a style="font-weight: bold" class="dropdown-item" href="#">
-                            Sản phẩm HOT
-                            <i class="fa-solid fa-fire"></i>
-                        </a></li>
-                    </ul>
-                </div>
-            </div>
+    </div>
+    <div class="col-md-12 col-xl-6">
+        <!--        hình ảnh mô tả-->
+        <div class="content-img">
+            <img src="home_img/header1.jpg" alt="">
         </div>
     </div>
-    <!--    hết-->
-
-    <!--    menu giỏ hàng-->
-    <form action="" method="">
-        <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-             aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h3 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng của bạn</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                Giỏ hàng của bạn đang trống !
-            </div>
-            <hr>
-            <div class="price-product">
-                <h4 class="total-price">Tổng tiền</h4>
-                <h4 class="price">0 đ</h4>
-            </div>
-            <p style="font-size: 13px; margin: 19px 14px">Phí vận chuyển sẽ được tính khi bạn thanh toán sản phẩm</p>
-            <button class="buy-product" type="submit">
-                Thanh Toán
-            </button>
-        </div>
-    </form>
-    <!--    hết-->
-
-    <!--//header2-->
-    <div class="header-content">
-        <div class="row">
-            <div class="col-xl-5 col-md-12">
-                <div class="intro-text col-md-12">
-                    <h1>Thưởng thức sự tiện nghi</h1>
-                    <p>Sự kết hợp mới mẻ</p>
-                    <div class="btns">
-                        <button class="btn-primary" style="width: 150px; font-size: 23px" onclick="introFunction()"
-                                id="start" title="Go to top">Bắt đầu
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!--             ảnh phần header-->
-            <div class="col-xl-7 col-md-12">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="hero-img">
-                                <img src="home_img/header10.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="hero-img">
-                                <img src="home_img/header6.png" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="hero-img">
-                                <img src="home_img/header7.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="hero-img">
-                                <img src="home_img/header8.png" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="hero-img">
-                                <img src="home_img/header9.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="hero-img">
-                                <img src="home_img/header5.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="hero-img">
-                                <img src="home_img/header11.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="hero-img">
-                                <img src="home_img/header12.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--    hết-->
-
-    <!--    mô tả 1-->
-    <div class="row class-content">
-        <div class="col-md-12 col-xl-6">
-            <!--        nội dung mô tả công thái học-->
-            <div class="content-text">
-                <h2>Ergonomic3 Store</h2>
-                <p>Nội thất công thái học là một phong cách thiết kế nội thất phổ biến
-                    trong công nghiệp hiện đại. Phong cách này thường tập trung vào sự tiện nghi,
-                    tính chất thực tế và sự hài hòa giữa chức năng và thẩm mỹ.</p>
-                <p>Trong nội thất công thái học, không gian được sắp xếp một cách hợp lý và tối ưu hóa .
-                    Các đồ vật và nội thất được sắp xếp sao cho phù hợp với chức năng sử dụng và
-                    tận dụng tối đa không gian có sẵn. Nguyên tắc sắp xếp và tổ chức được chú trọng để
-                    tạo ra sự thông thoáng và thoải mái cho người sử dụng.</p>
-                <p>Phong cách này tạo ra không gian thoáng đãng, gọn gàng và tạo cảm giác thoải
-                    mái cho người sử dụng.</p>
-            </div>
-        </div>
-        <div class="col-md-12 col-xl-6">
-            <!--        hình ảnh mô tả-->
-            <div class="content-img">
-                <img src="https://banghevanphong.net.vn/wp-content/uploads/2020/12/khong-gian-hoc-tap-lam-viec-tai-nha-5.jpg"
-                     alt="">
-            </div>
-        </div>
-    </div>
-
-    <!--mô tả 2-->
-    <div class="row class-content">
-        <div class="col-md-12 col-xl-6">
-            <!--        nội dung mô tả công thái học-->
-            <div class="content-text">
-                <h2 id="h2">Tại sao nên chọn <b>Ergonomic3 Store</b> ?</h2>
-                <ul class="class-ul">
-                    <li>Đảm bảo chất lượng sản phẩm luôn là số 1</li>
-                    <li>Hoàn tiền lập tức nếu không hài lòng về sản phẩm</li>
-                    <li>Giảm 30% ngay từ lần mua đầu tiên</li>
-                    <li>Sản phẩm nhập khẩu hoàn toàn chính hãng</li>
-                    <li>Luôn cung cấp các giá trị có lợi ích cho khách hàng</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-12 col-xl-6">
-            <!--        hình ảnh mô tả-->
-            <div class="content-img">
-                <img src="home_img/header1.jpg" alt="">
-            </div>
-        </div>
-    </div>
+</div>
 </div>
 <!--hết-->
 

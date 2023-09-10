@@ -90,7 +90,7 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void showFormSearch(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search_jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search.jsp");
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException | IOException e) {
@@ -228,6 +228,7 @@ public class ProductServlet extends HttpServlet {
     }
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
         String product_name = request.getParameter("product_name");
+        int old_price = Integer.parseInt(request.getParameter("old_price"));
         int product_price = Integer.parseInt(request.getParameter("product_price"));
         String product_description = request.getParameter("product_description");
         int product_type = Integer.parseInt(request.getParameter("product_type"));

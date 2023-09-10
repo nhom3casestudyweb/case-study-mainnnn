@@ -18,61 +18,64 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="/khung_suon/form.css">
-    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/khung_suon/cart.css">
 </head>
 <body>
 <div class="header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="logo ">
-            <img src="/khung_suon/img.png"
-                 alt="">
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
-                <div class="nav-links">
-                    <li>
-                        <div class="dropdown" id="admin">
-                            <a style="font-weight: bold; border: unset" class="btn" type="button"
-                               data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                                Admin
-                            </a>
-                        </div>
-                    </li>
+<%--    <nav class="navbar navbar-expand-lg bg-body-tertiary">--%>
+<%--        <div class="logo ">--%>
+<%--            <img src="/khung_suon/img.png"--%>
+<%--                 alt="">--%>
+<%--        </div>--%>
+<%--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--%>
+<%--                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--%>
+<%--                aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--            <span class="navbar-toggler-icon"></span>--%>
+<%--        </button>--%>
+<%--        <div class="collapse navbar-collapse" id="navbarSupportedContent">--%>
+<%--            <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">--%>
+<%--                <div class="nav-links">--%>
+<%--                    <li>--%>
+<%--                        <div class="dropdown" id="admin">--%>
+<%--                            <a style="font-weight: bold; border: unset" class="btn" type="button"--%>
+<%--                               data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">--%>
+<%--                                Admin--%>
+<%--                            </a>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
 
-                    <li>
-                        <a href="/admin_home.jsp">Trang chủ</a>
-                    </li>
-                    <h2 style="margin: 15px 123px;">Danh sách người dùng</h2>
-                </div>
+<%--                    <li>--%>
+<%--                        <a href="/index.jsp">Trang chủ</a>--%>
+<%--                    </li>--%>
+<%--                    <h2 style="margin: 15px 123px;">Danh sách người dùng</h2>--%>
+<%--                </div>--%>
 
-            </ul>
-        </div>
-    </nav>
-</div>
+<%--            </ul>--%>
+<%--        </div>--%>
+<%--    </nav>--%>
+<%--    --%>
+<%--</div>--%>
 
-<%--    danh sách phân quyền admin--%>
-<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-    <div class="offcanvas-header">
-        <h3 class="offcanvas-title" id="offcanvasTopLabel">Danh sách quản lý bởi Admin</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
-            <div class="nav-links">
-                <li>
-                    <a href="/customer">Quản lí người dùng</a>
-                </li>
-                <li>
-                    <a href="/product-servlet">Quản lí Sản phẩm</a>
-                </li>
-            </div>
-        </ul>
-    </div>
+<%--&lt;%&ndash;    danh sách phân quyền admin&ndash;%&gt;--%>
+<%--<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">--%>
+<%--    <div class="offcanvas-header">--%>
+<%--        <h3 class="offcanvas-title" id="offcanvasTopLabel">Danh sách quản lý bởi Admin</h3>--%>
+<%--        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>--%>
+<%--    </div>--%>
+<%--    <div class="offcanvas-body">--%>
+<%--        <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">--%>
+<%--            <div class="nav-links">--%>
+<%--                <li>--%>
+<%--                    <a href="/customer">Quản lí người dùng</a>--%>
+<%--                </li>--%>
+<%--                <li>--%>
+<%--                    <a href="/product-servlet">Quản lí Sản phẩm</a>--%>
+<%--                </li>--%>
+<%--            </div>--%>
+<%--        </ul>--%>
+<%--    </div>--%>
+    <jsp:include page="header.jsp"/>
+>>>>>>> 4da6ce818e126ef88fc7e20eeabb7099c2600b7b
 </div>
 <%--    hết--%>
 

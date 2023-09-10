@@ -83,12 +83,16 @@
 
 
 
+<<<<<<< HEAD
                     <!--                          giỏ hàng-->
                     <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
                             data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
+=======
+
+>>>>>>> 4da6ce818e126ef88fc7e20eeabb7099c2600b7b
                 </div>
             </ul>
         </div>

@@ -18,5 +18,7 @@ public interface IProductService {
 
     void editProducts(int productId, String productNam, double productPrice, int productType, int productInventory);
 
+
     void createProduct(String productName, int productPrice, String productDescription, int productType, int productInventory);
+
 }

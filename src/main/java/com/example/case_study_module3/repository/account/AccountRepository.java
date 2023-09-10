@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.example.case_study_module3.model.account.Account;
 import com.example.case_study_module3.model.customer.Customer;
-import com.example.case_study_module3.repository.product.BaseProductRepository;
+
+import com.example.case_study_module3.repository.BaseRepository;
+
 
 public class AccountRepository implements IAcountRepository {
     private static final String FIND_BY_USER_NAME = " call find_by_user_name(?) ";
@@ -20,7 +22,7 @@ public class AccountRepository implements IAcountRepository {
 
     @Override
     public Account findByUserName(String userName) {
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         try {
             CallableStatement callableStatement = connection.prepareCall(FIND_BY_USER_NAME);
             callableStatement.setString(1, userName);
@@ -51,7 +53,7 @@ public class AccountRepository implements IAcountRepository {
 
     @Override
     public boolean addUser(Account user) {
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         boolean rowUpdate;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ACCOUNT);
@@ -69,7 +71,7 @@ public class AccountRepository implements IAcountRepository {
     @Override
     public List<Account> getAllUser() {
         List<Account> accountList = new ArrayList<>();
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SELECT_ALL_ACCOUNT);
@@ -92,7 +94,7 @@ public class AccountRepository implements IAcountRepository {
 
     @Override
     public boolean deleteUser(String userName) {
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         boolean rowDelete;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_ACCOUNT);
@@ -112,7 +114,7 @@ public class AccountRepository implements IAcountRepository {
 
     @Override
     public boolean editUser(String userName, String password) {
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         boolean rowEdit;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PASSWORD);
@@ -133,8 +135,7 @@ public class AccountRepository implements IAcountRepository {
 
     @Override
     public Customer findCustomerByUserName(String userName) {
-        Connection connection = BaseProductRepository.getConnection();
-
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareCall(DISPLAY_INFO_OF_CUSTOMER);
             preparedStatement.setString(1, userName);
@@ -166,7 +167,7 @@ public class AccountRepository implements IAcountRepository {
 
     @Override
     public String findTypeOfCustomer(Customer user) {
-        Connection connection = BaseProductRepository.getConnection();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_TYPE_OF_CUSTOMER);
             preparedStatement.setInt(1, user.getTypeOfCustomerID());

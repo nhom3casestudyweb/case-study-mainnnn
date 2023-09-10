@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #fff5ee;
+    font-family: Cambria;
+}
+
+p, h3 {
+    font-size: 19px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.card {
+    margin: 52px auto;
+    width: 300px;
+    height: 380px;
+    background: darkgrey;
+    border-radius: 15px;
+    padding: 20px;
+    color: paleturquoise;
+    position: relative;
+}
+
+.card-heart, .card-cart {
+    font-size: 30px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.card-cart {
+    left: unset;
+    right: 20px;
+}
+
+.card-img {
+    height: 83%;
+    width: 83%;
+    margin-left: 15%;
+    transition: 1s;
+}
+
+.card-img img {
+    width: 63%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.card-color span {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+.card-action button {
+    background: black;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 23px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.card-action button:hover {
+    transform: scale(0.9);
+}
+
+.card:hover .card-img {
+    transform: translateY(-90px) rotate(-1deg);
+}
+
+.card:hover .card-title {
+    transform: translate(-27px, -65px);
+}
+
+.card:hover .card-price {
+    transform: translate(-92px, -65px);
+}
+
+.card-action {
+    margin: 0 auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 0.4s;
+}
+
+.card:hover .card-action {
+    visibility: visible;
+    opacity: 100;
+    margin-top: -64px;
+}
+.card-price{
+    margin-top: -23px;
+}
+#selection-product:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.card-title, .card-price {
+    transition: 1s;
+}
+price-product h4{
+    font-weight: bold;
+    float: left;
+}
+.total-price{
+    width: 50%;
+}
+.price {
+    width: 50%;
+    text-align: right;
+    margin: 0 -24px;
+}
+.buy-product{
+    background: black;
+    font-size: 25px;
+    margin: 19px 14px;
+    float: left;
+    height: 67px;
+    color: white;
+    transition: 0.5s;
+    border-radius: 19px;
+}
+.buy-product:hover{
+    transform: scale(0.9);
+
+}
+.price-product{
+    margin: 19px 14px;
+}

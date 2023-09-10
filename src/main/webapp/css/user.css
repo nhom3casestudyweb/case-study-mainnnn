@@ -1,0 +1,12 @@
+#user{
+    text-align: center;
+    font-family: monospace;
+}
+#user button{
+    padding: unset;
+    background: transparent;
+    border: none;
+}
+#user button i{
+    color: white;
+}

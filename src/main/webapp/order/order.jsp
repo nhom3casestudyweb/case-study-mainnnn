@@ -118,7 +118,7 @@
 <%--</form>--%>
 <%--<hr>--%>
 <%--<h2><a href="/user_home.jsp">Quay về trang chủ</a></h2>--%>
-<h2 class="text-center">Giỏ hàng chi tiết</h2>
+<h1 class="text-center">GIỎ HÀNG CHI TIẾT</h1>
 <div class="container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
@@ -145,8 +145,11 @@
                         </div>
                     </div>
                 </td>
+
                 <td data-th="Price"><fmt:formatNumber  value="${i.price}"/>đ</td>
-                <td data-th="Quantity"><input class="form-control text-center" value="${i.quantity}" type="number">
+                <td data-th="Quantity">
+
+                <input class="form-control text-center" value="${i.quantity}" type="number" >
                 </td>
                 <td data-th="Subtotal" class="text-center"><fmt:formatNumber  value="${i.quantity * i.price}"/>đ</td>
                 <td class="actions" data-th="">
@@ -175,12 +178,40 @@
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center"><strong><fmt:formatNumber value="${sessionScope.totalMoney}"/>đ</strong>
             </td>
-
-            <td><a href="/checkout" class="btn btn-success btn-block">Thanh toán <i
+            <c:if test="${sessionScope.cart != null}">
+            <td><a href="/checkout?action=getCustomer" class="btn btn-success btn-block">Thanh toán <i
                     class="fa fa-angle-right"></i></a>
             </td>
+            </c:if>
         </tr>
         </tfoot>
+
+<%--        <!-- Button trigger modal -->--%>
+<%--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">--%>
+<%--            Launch static backdrop modal--%>
+<%--        </button>--%>
+
+<%--        <!-- Modal -->--%>
+<%--        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">--%>
+<%--            <div class="modal-dialog">--%>
+<%--                <div class="modal-content">--%>
+<%--                    <div class="modal-header">--%>
+<%--                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>--%>
+<%--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
+<%--                    </div>--%>
+<%--                    <div class="modal-body">--%>
+<%--                        ...--%>
+<%--                    </div>--%>
+<%--                    <div class="modal-footer">--%>
+<%--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--%>
+<%--                        <button type="button" class="btn btn-primary">Understood</button>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+
+
+
     </table>
 </div>
 <%--------Modal-----%>
@@ -194,11 +225,11 @@
                 </div>
                 <div class="modal-body">
                     <input type="hidden" id="id" name="id">
-                    Do you want to delete user? <span id="name_delete" class="text-danger"></span>
+                    Bạn có muốn xoá <span id="name_delete" class="text-danger"></span>?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
+                    <button type="submit" class="btn btn-primary">Xoá</button>
                 </div>
             </form>
         </div>

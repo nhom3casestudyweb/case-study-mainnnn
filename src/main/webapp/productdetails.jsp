@@ -179,6 +179,7 @@
                             <c:out value="${product.productDescription}"/>
                         </h3>
                         <c:if test="${sessionScope.account.roleName != 'admin'}">
+                            
                             <label for="quantity">Số lượng</label>
                             <input type="number" name="quantity" id="quantity" min="1" max="${product.productInventory}" value="1">
                         <div class="btns">

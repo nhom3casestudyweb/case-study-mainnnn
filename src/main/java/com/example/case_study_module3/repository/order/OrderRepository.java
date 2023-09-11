@@ -24,7 +24,7 @@ public class OrderRepository implements IOrderRepository {
     private static final String GET_ID_LAST = "SELECT order_id FROM `order`ORDER BY order_id DESC LIMIT 1;";
     private static final String INSERT_ORDER_DETAIL = "INSERT INTO order_detail(order_id, product_id, order_detail_price, product_quantity)" +
             "VALUES(?,?,?,?);";
-
+    private static final String UPDATE_INVENTORY = "UPDATE product SET product_inventory = ? WHERE product_id = ?;";
     @Override
     public void addOrder(Customer customer, Cart cart) {
         LocalDate curDate = LocalDate.now();
@@ -50,6 +50,11 @@ public class OrderRepository implements IOrderRepository {
                     preparedStatement2.setDouble(3,item.getPrice());
                     preparedStatement2.setInt(4,item.getQuantity());
                     preparedStatement2.executeUpdate();
+
+                    PreparedStatement preparedStatement3 = connection.prepareStatement(UPDATE_INVENTORY);
+                    preparedStatement3.setInt(1, item.getProduct().getProductInventory() - item.getQuantity());
+                    preparedStatement3.setInt(2,item.getProduct().getProductId());
+                    preparedStatement3.executeUpdate();
                 }
             }
         } catch (SQLException e) {

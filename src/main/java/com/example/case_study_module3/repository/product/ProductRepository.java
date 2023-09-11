@@ -22,7 +22,7 @@ public class ProductRepository implements IProductRepository {
     private static final String CREATE_PRODUCT = "insert into product(product_name,old_price, product_price, product_description,\n" +
             "product_type_id, product_inventory) value\n" +
             "(?,?,?,?,?,?);";
-//    private static final String FIND_PRODUCT_BY_NAME =
+
 
     @Override
     public List<Product> showListChair() {

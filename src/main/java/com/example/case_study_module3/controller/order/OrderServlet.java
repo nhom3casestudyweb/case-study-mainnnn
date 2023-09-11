@@ -21,6 +21,7 @@ public class OrderServlet extends HttpServlet {
     static IOrderService orderService = new OrderService();
     static IProductService productService = new ProductService();
     static ICustomerService customerService = new CustomerService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -99,20 +100,34 @@ public class OrderServlet extends HttpServlet {
         Product product = productService.finById(id);
         double price = product.getProductPrice();
         Item item = new Item(product,quantity,price);
-        cart.addItem(item);
-
-        List<Item> list = cart.getItems();
-        session.setAttribute("totalMoney",cart.getTotalMoney());
-        session.setAttribute("cart", cart);
-        session.setAttribute("size",list.size());
-        try {
-            request.getRequestDispatcher("index.jsp").forward(request,response);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (quantity > item.getProduct().getProductInventory()){
+            request.setAttribute("id",id);
+            request.setAttribute("inventory",item.getProduct().getProductInventory());
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/error.jsp");
+            try {
+                requestDispatcher.forward(request,response);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
+        else {
+            cart.addItem(item);
 
+            List<Item> list = cart.getItems();
+            session.setAttribute("totalMoney", cart.getTotalMoney());
+            session.setAttribute("cart", cart);
+            session.setAttribute("size", list.size());
+            session.setAttribute("inventory", item.getProduct().getProductInventory());
+            try {
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
 //        Cart cart = new Cart();
 //        int quantity = Integer.parseInt(request.getParameter("quantity"));
 //        int id = Integer.parseInt(request.getParameter("id"));
